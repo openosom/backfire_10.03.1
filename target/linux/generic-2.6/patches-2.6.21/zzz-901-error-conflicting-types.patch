@@ -1,0 +1,41 @@
+--- a/scripts/unifdef.c	2013-07-15 01:48:26.000000000 +0800
++++ b/scripts/unifdef.c	2013-07-18 12:04:16.774842071 +0800
+@@ -206,7 +206,7 @@
+ static void             error(const char *);
+ static int              findsym(const char *);
+ static void             flushline(bool);
+-static Linetype         getline(void);
++static Linetype         get_line(void);
+ static Linetype         ifeval(const char **);
+ static void             ignoreoff(void);
+ static void             ignoreon(void);
+@@ -512,7 +512,7 @@
+ 
+ 	for (;;) {
+ 		linenum++;
+-		lineval = getline();
++		lineval = get_line();
+ 		trans_table[ifstate[depth]][lineval]();
+ 		debug("process %s -> %s depth %d",
+ 		    linetype_name[lineval],
+@@ -526,7 +526,7 @@
+  * help from skipcomment().
+  */
+ static Linetype
+-getline(void)
++get_line(void)
+ {
+ 	const char *cp;
+ 	int cursym;
+--- linux-2.6.21.5/scripts/mod/sumversion.c	2007-06-12 02:37:06.000000000 +0800
++++ linux-2.6.21-marvell/scripts/mod/sumversion.c	2013-07-31 20:16:13.000000000 +0800
+@@ -8,9 +8,7 @@
+ #include <errno.h>
+ #include <string.h>
+ #include "modpost.h"
+-#ifdef __APPLE__
+ #include <limits.h>
+-#endif
+ 
+ /*
+  * Stolen form Cryptographic API.
