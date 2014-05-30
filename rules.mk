@@ -67,6 +67,9 @@ endif
 ifneq ($(findstring -march=armv5te,$(TARGET_OPTIMIZATION)),)
   ARCH_SUFFIX:=_v5te
 endif
+ifneq ($(findstring -march=armv7-a,$(TARGET_OPTIMIZATION)),)
+  ARCH_SUFFIX:=_v7-a
+endif
 
 DL_DIR:=$(if $(call qstrip,$(CONFIG_DOWNLOAD_FOLDER)),$(call qstrip,$(CONFIG_DOWNLOAD_FOLDER)),$(TOPDIR)/dl)
 BIN_DIR:=$(TOPDIR)/bin/$(BOARD)
