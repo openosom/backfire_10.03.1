@@ -22,16 +22,18 @@ include $(INCLUDE_DIR)/host-build.mk
 define Host/Compile
 	$(MAKE) -C $(HOST_BUILD_DIR)/yaffs2/utils \
 		CFLAGS="$(HOST_CFLAGS) -include endian.h" \
-		mkyaffs2image
+		mkyaffs2image mkyaffs2image-page2k
 endef
 
 define Host/Install
 	$(INSTALL_DIR) $(STAGING_DIR_HOST)/bin
 	$(INSTALL_BIN) $(HOST_BUILD_DIR)/yaffs2/utils/mkyaffs2image $(STAGING_DIR_HOST)/bin/
+	$(INSTALL_BIN) $(HOST_BUILD_DIR)/yaffs2/utils/mkyaffs2image-page2k $(STAGING_DIR_HOST)/bin/
 endef
 
 define Host/Clean
 	rm -f $(STAGING_DIR_HOST)/bin/mkyaffs2image
+	rm -f $(STAGING_DIR_HOST)/bin/mkyaffs2image-page2k
 endef
 
 $(eval $(call HostBuild))
