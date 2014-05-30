@@ -1,6 +1,7 @@
 choice
 	prompt "eglibc version" 
 	depends on TOOLCHAINOPTS && USE_EGLIBC
+	default EGLIBC_VERSION_2_11 if TARGET_loongson2f
 	default EGLIBC_VERSION_2_8
 	help
 	  Select the version of eglibc you wish to use.

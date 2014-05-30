@@ -18,5 +18,4 @@
 *.orig
 *.rej
 *~
-.gitignore
-.svn
+.svn/
