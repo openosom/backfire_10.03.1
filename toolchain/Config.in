@@ -180,7 +180,7 @@ config INSIGHT
 	help
 		Enable if you want to build insight-gdb
 
-config USE_UCLIBC
+config USE_EGLIBC
 	bool
 	default y if !TOOLCHAINOPTS
 
