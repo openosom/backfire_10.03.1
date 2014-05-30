@@ -7,6 +7,14 @@ config GLIBC_VERSION
 	default "2.7"    if GLIBC_VERSION_2_7
 	default "2.7"
 
+if !TOOLCHAINOPTS
+
+	config GLIBC_VERSION_2_6_1
+		default y if USE_GLIBC
+		bool
+
+endif
+
 config GLIBC_PORTS
 	bool
 	depends on USE_GLIBC
