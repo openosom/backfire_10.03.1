@@ -1,0 +1,15 @@
+OpenWrt-DreamBox/branches/sun分支是基于OpenWrt官网tags/backfire_10.03.1进行修改
+
+
+OpenWrt的SVN库架构：
+	tags：
+		存放各个稳定版本的OpenWrt
+	trunk和branches/{kamikaze-before-brng, whiterussian, 8.09, backfire, attitude_adjustment}：
+		存放开发版本和各个分支的OpenWrt
+
+	branches/packages_xxx：
+		存放各个稳定版本的packages feeds
+	packages和feeds/xorg：
+		存放开发版本的packagefeeds
+
+
