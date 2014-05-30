@@ -19,7 +19,7 @@ tools-y += firmware-utils patch-cmdline quilt yaffs2 xz cmake
 tools-y += mm-macros xorg-macros xfce-macros missing-macros
 tools-$(CONFIG_TARGET_orion) += wrt350nv2-builder upslug2
 tools-$(CONFIG_TARGET_x86) += qemu
-ifneq ($(CONFIG_LINUX_2_4)$(CONFIG_LINUX_2_6_25),)
+ifneq ($(CONFIG_LINUX_2_4)$(CONFIG_LINUX_2_6_21)$(CONFIG_LINUX_2_6_22)$(CONFIG_LINUX_2_6_23)$(CONFIG_LINUX_2_6_24)$(CONFIG_LINUX_2_6_25),)
 tools-y += squashfs lzma-old
 else
 ifneq ($(CONFIG_TARGET_ar71xx),)
