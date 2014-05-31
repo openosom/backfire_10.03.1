@@ -12,7 +12,11 @@ config EGLIBC_VERSION
 if !TOOLCHAINOPTS
 
 	config EGLIBC_VERSION_2_8
-		default y if USE_EGLIBC
+		default y if USE_EGLIBC && !TARGET_loongson2f
+		bool
+
+	config EGLIBC_VERSION_2_11
+		default y if USE_EGLIBC && TARGET_loongson2f
 		bool
 
 	config EGLIBC_REVISION
@@ -28,6 +32,11 @@ if !TOOLCHAINOPTS
 		default ""
 
 endif
+
+#################
+# while ./config/Config.in is for TOOLCHAINOPTS option,
+# the below is of !TOOLCHAINOPTS option.
+################
 
 if !TOOLCHAINOPTS
 
