@@ -19,3 +19,5 @@
 *.rej
 *~
 .svn/
+.git/
+.gitignore
