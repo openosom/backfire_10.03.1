@@ -2,7 +2,6 @@
 
 choice
 	prompt "Binutils Version" if TOOLCHAINOPTS
-	default BINUTILS_VERSION_2_20_1 if TARGET_loongson2f
 	default BINUTILS_VERSION_2_19_1
 	help
 	    Select the version of binutils you wish to use.
@@ -27,6 +26,13 @@ config EXTRA_BINUTILS_CONFIG_OPTIONS
 	default ""
 	help
 	    Any additional binutils options you may want to include....
+
+#Loongson2f, for default
+if !TOOLCHAINOPTS
+	config BINUTILS_VERSION_2_20_1
+		default y if TARGET_loongson2f
+		bool
+endif
 
 config BINUTILS_VERSION
 	string
